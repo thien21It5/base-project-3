@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-public class HomeActivity extends Fragment {
+public class ScoreActivity extends Fragment {
     GridView gridView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.activity_home, container, false);
+        View root = inflater.inflate(R.layout.activity_score, container, false);
 
         return root;
     }
