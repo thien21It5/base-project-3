@@ -43,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = edPassword.getText().toString();
                 String email = edEmail.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                Database db = new Database(getApplicationContext(), "studentmanagement", null, 1);
+                Database db = new Database(getApplicationContext(), "studentManager", null, 1);
 
                 if (username.length() == 0 || password.length() == 0 || email.length() == 0 || confirm.length() == 0) {
                     //Thông báo người dùng nhập đầy đủ thông tin

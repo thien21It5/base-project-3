@@ -19,4 +19,5 @@ public class HomeActivity extends Fragment {
 
         return root;
     }
+
 }

@@ -8,8 +8,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
 
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         home = new HomeActivity();
@@ -48,15 +56,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.homeP) {
+                    Toast.makeText(getApplicationContext(),"Trang chủ", Toast.LENGTH_SHORT).show();
                     setFragment(home);
+                    bottomNavigationView.getMenu().findItem(R.id.homeP).setChecked(true);
                 } else if (item.getItemId() == R.id.teacher) {
+                    Toast.makeText(getApplicationContext(),"Giảng viên", Toast.LENGTH_SHORT).show();
                     setFragment(teacher);
+                    bottomNavigationView.getMenu().findItem(R.id.teacher).setChecked(true);
                 } else if (item.getItemId() == R.id.student) {
+                    Toast.makeText(getApplicationContext(),"Sinh viên", Toast.LENGTH_SHORT).show();
                     setFragment(student);
+                    bottomNavigationView.getMenu().findItem(R.id.student).setChecked(true);
                 } else if (item.getItemId() == R.id.subject) {
+                    Toast.makeText(getApplicationContext(),"Môn học", Toast.LENGTH_SHORT).show();
                     setFragment(subject);
+                    bottomNavigationView.getMenu().findItem(R.id.subject).setChecked(true);
                 } else if (item.getItemId() == R.id.score) {
+                    Toast.makeText(getApplicationContext(),"Điểm số", Toast.LENGTH_SHORT).show();
                     setFragment(score);
+                    bottomNavigationView.getMenu().findItem(R.id.score).setChecked(true);
                 }else {
                     return false;
                 }
@@ -68,18 +86,23 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.homeP) {
                     setFragment(home);
+                    nav.setCheckedItem(R.id.homeP);
                 } else if (item.getItemId() == R.id.teacher) {
                     setFragment(teacher);
+                    nav.setCheckedItem(R.id.teacher);
                 } else if (item.getItemId() == R.id.student) {
                     setFragment(student);
+                    nav.setCheckedItem(R.id.student);
                 } else if (item.getItemId() == R.id.subject) {
                     setFragment(subject);
+                    nav.setCheckedItem(R.id.subject);
                 } else if (item.getItemId() == R.id.score) {
                     setFragment(score);
+                    nav.setCheckedItem(R.id.score);
                 }else {
                     return false;
                 }
-                return false;
+                return true;
             }
         });
     }

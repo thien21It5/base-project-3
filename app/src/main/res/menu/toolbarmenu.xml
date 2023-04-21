@@ -10,7 +10,8 @@
     <item
         android:title="Giảng viên"
         android:id="@+id/teacher"
-        android:icon="@drawable/ic_teacher"/>
+        android:icon="@drawable/ic_teacher"
+        />
 
     <item
         android:title="Sinh viên"

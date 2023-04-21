@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = edUsername.getText().toString();
                 String password = edPassword.getText().toString();
-                Database db = new Database(getApplicationContext(), "studentmanagement", null, 1);
+                Database db = new Database(getApplicationContext(), "studentManager", null, 1);
 
                 if (username.length() == 0 || password.length() == 0){
                     //Thông báo người dùng nhập đầy đủ thông tin
@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }else {
                         Toast.makeText(getApplicationContext(), "Mật khẩu hoặc tài khoản sai!!!", Toast.LENGTH_SHORT).show();
-
                     }
                 }
             }
